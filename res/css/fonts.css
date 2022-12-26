@@ -4,12 +4,12 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('https://res.sqowey.de/fonts/inter-v12-latin-regular.eot');
-    src: local(''), url('https://res.sqowey.de/fonts/inter-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('https://res.sqowey.de/fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('https://res.sqowey.de/fonts/inter-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
-    url('https://res.sqowey.de/fonts/inter-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('https://res.sqowey.de/fonts/inter-v12-latin-regular.svg#Inter') format('svg');
+    src: url('/res/fonts/inter-v12-latin-regular.eot');
+    src: local(''), url('/res/fonts/inter-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/res/fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/res/fonts/inter-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('/res/fonts/inter-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/res/fonts/inter-v12-latin-regular.svg#Inter') format('svg');
 }
 
 
@@ -19,12 +19,12 @@
     font-family: 'Dosis';
     font-style: normal;
     font-weight: 800;
-    src: url('https://res.sqowey.de/fonts/dosis-v27-latin-800.eot');
-    src: local(''), url('https://res.sqowey.de/fonts/dosis-v27-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('https://res.sqowey.de/fonts/dosis-v27-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
-    url('https://res.sqowey.de/fonts/dosis-v27-latin-800.woff') format('woff'), /* Modern Browsers */
-    url('https://res.sqowey.de/fonts/dosis-v27-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('https://res.sqowey.de/fonts/dosis-v27-latin-800.svg#Dosis') format('svg');
+    src: url('/res/fonts/dosis-v27-latin-800.eot');
+    src: local(''), url('/res/fonts/dosis-v27-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/res/fonts/dosis-v27-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/res/fonts/dosis-v27-latin-800.woff') format('woff'), /* Modern Browsers */
+    url('/res/fonts/dosis-v27-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/res/fonts/dosis-v27-latin-800.svg#Dosis') format('svg');
 }
 
 
@@ -34,10 +34,10 @@
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    src: url('https://res.sqowey.de/fonts/ubuntu-v20-latin-500.eot');
-    src: local(''), url('https://res.sqowey.de/fonts/ubuntu-v20-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('https://res.sqowey.de/fonts/ubuntu-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-    url('https://res.sqowey.de/fonts/ubuntu-v20-latin-500.woff') format('woff'), /* Modern Browsers */
-    url('https://res.sqowey.de/fonts/ubuntu-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('https://res.sqowey.de/fonts/ubuntu-v20-latin-500.svg#Ubuntu') format('svg');
+    src: url('/res/fonts/ubuntu-v20-latin-500.eot');
+    src: local(''), url('/res/fonts/ubuntu-v20-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/res/fonts/ubuntu-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/res/fonts/ubuntu-v20-latin-500.woff') format('woff'), /* Modern Browsers */
+    url('/res/fonts/ubuntu-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/res/fonts/ubuntu-v20-latin-500.svg#Ubuntu') format('svg');
 }
