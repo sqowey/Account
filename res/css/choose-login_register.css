@@ -1,0 +1,65 @@
+.welcome_container {
+    width: 100%;
+    padding-top: 2.5rem;
+    background-image: url("/res/img/login_top.png");
+    background-size: cover;
+    height: calc(((100vw / 4056) * 2648));
+}
+
+.welcome {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.welcome * {
+    margin: 0;
+    padding: 0;
+    z-index: 50;
+}
+
+.welcome h1 {
+    font-size: 5rem;
+}
+
+.welcome p {
+    font-size: 5vmin;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2.5rem;
+    width: 100%;
+    z-index: 50;
+}
+
+.buttons_bg {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: url("/res/img/login_bottom.png");
+    background-size: cover;
+    height: calc(((100vw / 3976) * 2608));
+}
+
+.buttons button {
+    margin: 0.5rem auto;
+    display: block;
+    width: 80%;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#button_login {
+    background-color: var(--background-light);
+}
+
+#button_register {
+    background-color: transparent;
+    border: 1px solid var(--background-light);
+    color: var(--text-color);
+}
