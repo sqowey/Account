@@ -1,9 +1,21 @@
-.welcome_container {
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto min-content;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "welcome_container" "button_container";
     width: 100%;
-    padding-top: 2.5rem;
-    background-image: url("/res/img/login_top.png");
-    background-size: cover;
-    height: calc(((100vw / 4056) * 2648));
+    height: 100%;
+}
+
+.welcome_container {
+    grid-area: welcome_container;
+}
+
+.button_container {
+    grid-area: button_container;
+    position: relative;
 }
 
 .welcome {
@@ -14,34 +26,60 @@
 .welcome * {
     margin: 0;
     padding: 0;
-    z-index: 50;
 }
 
-.welcome h1 {
+#welcome_title {
     font-size: 5rem;
+    margin-top: 1.5rem;
+    display: block;
 }
 
 .welcome p {
     font-size: 5vmin;
 }
 
-.buttons {
-    position: absolute;
+.button_container {
     bottom: 0;
     padding-bottom: 2.5rem;
     width: 100%;
     z-index: 50;
 }
 
+
+/* 
+Background images
+*/
+
+.background_img {
+    width: 100%;
+    background-size: cover;
+    z-index: 1;
+}
+
 .buttons_bg {
+    background-image: url("/res/img/login_bottom.png");
     z-index: 1;
     position: absolute;
     bottom: 0;
-    width: 100%;
-    background-image: url("/res/img/login_bottom.png");
-    background-size: cover;
     height: calc(((100vw / 3976) * 2608));
 }
+
+.welcome_bg {
+    background-image: url("/res/img/login_top.png");
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    height: calc(((100vw / 3976) * 2608));
+}
+
+main * {
+    z-index: 50;
+}
+
+
+/* 
+The buttons
+*/
 
 .buttons button {
     margin: 0.5rem auto;
@@ -69,4 +107,34 @@
     background-color: transparent;
     border: 1px solid var(--background-light);
     color: var(--text-color);
+}
+
+
+/* 
+Orientation landscape
+*/
+
+@media screen and (orientation: landscape) {
+    main {
+        grid-template-areas: "welcome_container button_container";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .buttons_bg {
+        background-image: url("/res/img/login_right.png");
+        right: 0;
+        width: calc(((100vw / 3976) * 2608));
+        height: 100%;
+    }
+    .welcome_bg {
+        background-image: url("/res/img/login_left.png");
+        left: 0;
+        width: calc(((100vw / 3976) * 2608));
+        height: 100%;
+    }
+    .buttons {
+        width: 100%;
+        position: absolute;
+        bottom: 2.5rem;
+    }
 }

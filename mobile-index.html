@@ -13,23 +13,25 @@
     <link rel="stylesheet" href="/res/css/fonts.css">
     <link rel="stylesheet" href="/res/css/main.css">
     <link rel="stylesheet" href="/res/css/choose-login_register.css">
-    <link rel="stylesheet" href="/res/css/only_portrait.css">
 </head>
 
 <body>
     <main>
         <div class="welcome_container">
             <div class="welcome">
-                <h1>Hallo</h1>
+                <span id="welcome_title">Hallo</span>
                 <p>Willkommen bei Sqowey!</p>
             </div>
         </div>
-        <div class="buttons">
-            <button id="button_login" onclick="location.assign('./login/mobile');">Anmelden <i class="fa-solid fa-angle-right"></i></button>
-            <button id="button_register">Registrieren <i class="fa-solid fa-angle-right"></i></button>
+        <div class="button_container">
+            <div class="buttons">
+                <button id="button_login" onclick="location.assign('./login/mobile');">Anmelden <i class="fa-solid fa-angle-right"></i></button>
+                <button id="button_register">Registrieren <i class="fa-solid fa-angle-right"></i></button>
+            </div>
         </div>
-        <div class="buttons_bg"></div>
     </main>
+    <div class="welcome_bg background_img"></div>
+    <div class="buttons_bg background_img"></div>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
 </body>
 
