@@ -126,6 +126,11 @@ Orientation landscape
         width: calc(((100vw / 3976) * 2608));
         height: 100%;
     }
+    .buttons button {
+        height: 10vmin;
+        font-size: 3vmin;
+        border-radius: 1vmin;
+    }
     .welcome_bg {
         background-image: url("/res/img/login_left.png");
         left: 0;
