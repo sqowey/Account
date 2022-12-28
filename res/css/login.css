@@ -11,6 +11,7 @@ main {
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas: "title_container" "form_container" "submit_button";
+    background-color: var(--background2-color);
 }
 
 .title_container {
@@ -90,4 +91,32 @@ input {
     border: 0;
     outline: 0;
     border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+    main {
+        width: 600px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-height: 700px) {
+    body {
+        display: grid;
+        place-items: center;
+    }
+    main {
+        height: 700px;
+        margin: auto;
+        border-radius: 2rem;
+    }
+    .title_container {
+        grid-area: title_container;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    }
+    .submit_button {
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
 }
