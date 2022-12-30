@@ -38,6 +38,16 @@ $_SESSION["user_usernam"] = $username;
 $_SESSION["user_displayname"] = $displayname;
 
 // Redirect
-
+if(!isset($_GET["redirect"])) {
+    header("Location: https://app.sqowey.de");
+    exit();
+}
+$redirection = $_GET["redirection"];
+if(str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de"));
+if(str_starts_with($redirection, ".")){
+    header("Location: ".$redirection);
+    exit();
+}
+exit ("Redirection failed!");
 
 ?>
