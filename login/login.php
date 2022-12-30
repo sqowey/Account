@@ -27,7 +27,7 @@ if ($stmt = $con->prepare("SELECT username, displayname, id, salt, password, ema
 }
 
 // Verify password
-if(!password_verify($salt.$input_password, $password_hash)) exit("Wrong password");
+if(password_verify($salt.$input_password, $password_hash) != 1) exit("Wrong password");
 
 // Set session variables
 session_start();
