@@ -17,17 +17,17 @@ $con = mysqli_connect(
 if(mysqli_connect_errno()) exit("Error with the Database");
 
 // Check if account exists
-if ($stmt = $con->prepare("SELECT username, displayname, id, salt, password, email, account_version FROM accounts WHERE username = ?")) {
+if ($stmt = $con->prepare("SELECT username, displayname, id, password, email, account_version FROM accounts WHERE username = ?")) {
     $stmt->bind_param('s', $input_username);
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows == 0) exit ("Account not found");
-    $stmt->bind_result($username, $displayname, $id, $salt, $password_hash, $email, $account_version);
+    $stmt->bind_result($username, $displayname, $id, $password_hash, $email, $account_version);
     $stmt->fetch();
 }
 
 // Verify password
-if(password_verify($salt.$input_password, $password_hash) != 1) exit("Wrong password");
+if(password_verify($input_password, $password_hash) != 1) exit("Wrong password");
 
 // Set session variables
 session_start();
