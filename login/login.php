@@ -3,7 +3,7 @@
 // Check for input
 if(!isset($_POST["username"]) || strlen($_POST["username"]) == 0) exit ("No username input");
 if(!isset($_POST["password"]) || strlen($_POST["password"]) == 0) exit ("No password input");
-$input_username = $_POST["username"];
+$input_username = strtolower($_POST["username"]);
 $input_password = $_POST["password"];
 
 // Connect to the db
@@ -18,7 +18,7 @@ if(mysqli_connect_errno()) exit("Error with the Database");
 
 // Check if account exists
 if ($stmt = $con->prepare("SELECT username, displayname, id, salt, password, email, account_version FROM accounts WHERE username = ?")) {
-    $stmt->bind_param('s', strtolower($input_username));
+    $stmt->bind_param('s', $input_username);
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows == 0) exit ("Account not found");
