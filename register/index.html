@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sqowey - Registrieren</title>
+    <link rel="icon" type="image/x-icon" href="/res/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="/res/img/favicon.ico" />
+    <link rel="stylesheet" href="/res/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/res/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="/res/css/fonts.css">
+    <link rel="stylesheet" href="/res/css/main.css">
+    <link rel="stylesheet" href="/res/css/register.css">
+</head>
+
+<body>
+    <main>
+        <div class="title_container">
+            <span id="welcome_title">Willkommen zu Sqowey!</span>
+        </div>
+        <div class="form_container">
+            <form action="./register.php" method="post" id="login_formular">
+                <div class="input_container">
+                    <p>Benutzername</p>
+                    <input id="username_input" class="input" type="text" name="username" required>
+                </div>
+                <div class="input_container">
+                    <p>E-Mail</p>
+                    <input id="email_input" class="input" type="email" name="email" required>
+                </div>
+                <div class="input_container">
+                    <p>Passwort</p>
+                    <input id="password_input" class="input" type="password" name="password" required>
+                </div>
+                <div class="input_container">
+                    <p>Passwort wiederholen</p>
+                    <input id="password_repeat_input" class="input" type="password" name="password_repeat" required>
+                </div>
+            </form>
+        </div>
+        <div class="submit_button">
+            <button id="submit_button" class="button" type="submit" onclick='document.getElementById("login_formular").submit();'>Registrieren</button>
+        </div>
+    </main>
+    <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
+    <script src="/res/js/blockRegisterForm.js"></script>
+</body>
+
+</html>
