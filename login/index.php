@@ -21,7 +21,7 @@
             <span id="welcome_title">Willkommen zurück!</span>
         </div>
         <div class="form_container">
-            <form action="./login.php" method="post" id="login_formular">
+            <form action="./login.php<?php if(isset($_GET["redirect"])) echo("?redirect=".urlencode($_GET["redirect"]))?>" method="post" id="login_formular">
                 <div class="input_container">
                     <p>E-Mail oder Benutzername</p>
                     <input id="username_input" class="input" type="text" name="username" required>
