@@ -45,14 +45,14 @@ $con = mysqli_connect(
 if(mysqli_connect_errno()) exit("Error with the Database");
 
 // Check if account exists
-if ($stmt = $con->prepare("SELECT username FROM accounts WHERE username = ?")) {
+if ($stmt = $con->prepare("SELECT username FROM ".$config_account_db_account_table." WHERE username = ?")) {
     $stmt->bind_param('s', $input_username);
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows != 0) exit ("An account with that username already exists");
     $stmt->close();
 }
-if ($stmt = $con->prepare("SELECT email FROM accounts WHERE email = ?")) {
+if ($stmt = $con->prepare("SELECT email FROM ".$config_account_db_account_table." WHERE email = ?")) {
     $stmt->bind_param('s', $input_email);
     $stmt->execute();
     $stmt->store_result();
@@ -63,7 +63,7 @@ if ($stmt = $con->prepare("SELECT email FROM accounts WHERE email = ?")) {
 // Generate ID
 while (true) {
     $generated_id = generateID();
-    if($stmt = $con->prepare("SELECT id FROM accounts WHERE id = ?")) {
+    if($stmt = $con->prepare("SELECT id FROM ".$config_account_db_account_table." WHERE id = ?")) {
         $stmt->bind_param('s', $generated_id);
         $stmt->execute();
         $stmt->store_result();
@@ -73,7 +73,7 @@ while (true) {
 
 // Insert into DB
 $hashed_pw = password_hash($input_password, PASSWORD_BCRYPT);
-if($stmt = $con->prepare("INSERT INTO accounts (id, username, displayname, email, password, account_version) VALUES (?, ?, ?, ?, ?, 3)")){    
+if($stmt = $con->prepare("INSERT INTO ".$config_account_db_account_table." (id, username, displayname, email, password, account_version) VALUES (?, ?, ?, ?, ?, 3)")){    
     $stmt->bind_param('sssss', $generated_id, $input_username, $input_displayname, $input_email, $hashed_pw);
     $stmt->execute();
     $stmt->close();
