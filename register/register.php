@@ -28,7 +28,7 @@ if($_POST["password"] != $_POST["password_repeat"]) exit ("Passwords do not matc
 $input_displayname = $_POST["username"];
 $input_username = strtolower($input_displayname);
 $input_password = $_POST["password"];
-$input_email = $_POST["email"];
+$input_email = strtolower($_POST["email"]);
 if(!filter_var($input_email, FILTER_VALIDATE_EMAIL)) exit ("Email not recognized as email");
 if(!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $input_displayname)) exit ("Displayname not valid");
 if(!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,64}$/", $input_password)) exit ("Invalid password");
