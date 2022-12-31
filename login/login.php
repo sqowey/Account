@@ -17,11 +17,14 @@ $con = mysqli_connect(
 if(mysqli_connect_errno()) exit("Error with the Database");
 
 // Check if account exists
-if ($stmt = $con->prepare("SELECT username, displayname, id, password, email, account_version FROM accounts WHERE username = ?")) {
+$identifying_param = "username";
+if(str_contains($input_username,"@")) $identifying_param = "email";
+if ($stmt = $con->prepare("SELECT username, displayname, id, password, email, account_version FROM ".$config_account_db_account_table." WHERE ".$identifying_param." = ?")) {
     $stmt->bind_param('s', $input_username);
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows == 0) exit ("Account not found");
+    if ($stmt->num_rows > 1) exit ("Too many accounts found!<br>Please log in using your username");
     $stmt->bind_result($username, $displayname, $id, $password_hash, $email, $account_version);
     $stmt->fetch();
 }
