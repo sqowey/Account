@@ -1,5 +1,8 @@
 <?php 
 
+// Modules
+require("../res/php/session.php");
+
 // Check for input
 if(!isset($_POST["username"]) || strlen($_POST["username"]) == 0) exit ("No username input");
 if(!isset($_POST["password"]) || strlen($_POST["password"]) == 0) exit ("No password input");
@@ -33,11 +36,10 @@ if ($stmt = $con->prepare("SELECT username, displayname, id, password, email, ac
 if(password_verify($input_password, $password_hash) != 1) exit("Wrong password");
 
 // Set session variables
-session_start();
-session_unset();
+unset_session();
 $_SESSION["user_id"] = $id;
 $_SESSION["user_email"] = $email;
-$_SESSION["user_usernam"] = $username;
+$_SESSION["user_username"] = $username;
 $_SESSION["user_displayname"] = $displayname;
 
 // Redirect
@@ -46,11 +48,12 @@ if(!isset($_GET["redirect"])) {
     exit();
 }
 if(isset($_GET["redirect"])) $redirection = $_GET["redirect"];
-if(!str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de")) exit("Redirection failed!");
-if(str_starts_with($redirection, ".") || str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de")){
+if(str_starts_with($redirection, ".") || str_starts_with($redirection, "/") || str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de")){
     header("Location: ".$redirection);
     exit();
 }
+if(!str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de")) exit("Redirection failed!");
 exit ("Redirection failed!");
+
 
 ?>
