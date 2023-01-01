@@ -45,9 +45,9 @@ if(!isset($_GET["redirect"])) {
     header("Location: https://app.sqowey.de");
     exit();
 }
-$redirection = $_GET["redirection"];
-if(str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de"));
-if(str_starts_with($redirection, ".")){
+if(isset($_GET["redirect"])) $redirection = $_GET["redirect"];
+if(!str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de")) exit("Redirection failed!");
+if(str_starts_with($redirection, ".") || str_ends_with(parse_url($redirection, PHP_URL_HOST), "sqowey.de")){
     header("Location: ".$redirection);
     exit();
 }
